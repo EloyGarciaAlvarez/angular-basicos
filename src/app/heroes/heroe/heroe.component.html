@@ -1,0 +1,23 @@
+<h1>Nombre del héroe: {{nombre}}</h1>
+<h3>One way data binding. Del ts al html.</h3>
+<dl>
+    <td> Nombre: </td>
+    <dd> {{nombre}}</dd>
+
+    <td> Edad: </td>
+    <dd> {{edad}}</dd>
+
+    <td> Método/Función: </td>
+    <dd> {{obtenerTodo()}}</dd>
+
+    <td> Capitalizado: </td>
+    <dd> {{nombreCapitalizado}}</dd>
+</dl>
+
+<button (click)="cambiarNombre()">
+    Cambiar héroe
+</button>
+
+<button (click)="cambiarEdad()">
+    Cambiar edad
+</button>
