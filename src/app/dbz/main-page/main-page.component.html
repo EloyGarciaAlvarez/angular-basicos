@@ -1,0 +1,17 @@
+<h1>Dragon Ball Z</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <!-- Paso del atributo personajes del main-page-component (padre) al atributo listaPersonajes de personajesComponent (hijo). --> 
+        <app-personajes [listaPersonajes]="personajes">
+
+        </app-personajes>
+    </div>
+
+    <div class="col">
+        <app-agregar [listadoPersonajes]="personajes" [nuevoPersonaje]="nuevo">
+            
+        </app-agregar>
+    </div>
+</div>
