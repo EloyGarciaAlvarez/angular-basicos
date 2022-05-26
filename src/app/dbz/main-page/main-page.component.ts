@@ -22,4 +22,12 @@ export class MainPageComponent{
     nombre:'Maestro Roshi',
     poder: 1000
   }
+
+  agregarNuevoPersonaje( nuevoPersonaje: Personaje){
+    console.log("Agregando");
+    if(this.personajes.some(pers => pers.nombre === nuevoPersonaje.nombre)){
+      return
+    } 
+    this.personajes.push(nuevoPersonaje);
+  }
 }

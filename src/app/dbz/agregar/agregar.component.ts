@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
 
 @Component({
@@ -12,20 +12,23 @@ export class AgregarComponent{
     poder: 0
   }
 
-  @Input() listadoPersonajes:Personaje[] = []
+  /* OutPut Decorador para eventos de salida que pueden ser capturados en el padre */
+  @Output() onNuevoPersonaje: EventEmitter<Personaje> = new EventEmitter();
+
+  
   
   agregar(){
     if(this.nuevoPersonaje.nombre.trim().length == 0){
       return;
     }
-    if(this.listadoPersonajes.some(p => p.nombre == this.nuevoPersonaje.nombre)){
-      return;
-    }
-    this.listadoPersonajes.push(this.nuevoPersonaje);
+
+    // Emisión del evento.
+    this.onNuevoPersonaje.emit(this.nuevoPersonaje);
+    
     this.nuevoPersonaje = {
       nombre:'',
       poder:0
     }
-    console.log(this.nuevoPersonaje);
+    
   }
 }
