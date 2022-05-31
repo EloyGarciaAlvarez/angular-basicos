@@ -10,9 +10,11 @@ export class PersonajesComponent {
 
   // Los personajes vienen desde el componente padre, desde el html.
   
-  @Input() listaPersonajes:Personaje[]=[];
+  //@Input() listaPersonajes:Personaje[]=[];
   
-
+  get personajes(){
+    return this.dbzService.personajes;
+  }
   // Inyección de dependencia del servio DbzService al componente
   // PersonajesComponent. El servicio es un singleton.
   constructor(private dbzService:DbzService){

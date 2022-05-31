@@ -4,21 +4,12 @@
 <div class="row">
     <div class="col">
         <!-- Paso del atributo personajes del main-page-component (padre) al atributo listaPersonajes de personajesComponent (hijo). --> 
-        <app-personajes 
-            [listaPersonajes]="personajes"
-        >
-
-        </app-personajes>
+        <app-personajes></app-personajes>
     </div>
 
     <div class="col">
         <!-- onNuevoPersonaje es un evento emitido desde el hijo y por tanto puede ser usado en el padre para ejecutar algo. -->
-        <app-agregar 
-            [nuevoPersonaje]="nuevo" 
-            (onNuevoPersonaje)="agregarNuevoPersonaje( $event )"
-        >
-            
-        </app-agregar>
+        <app-agregar [nuevoPersonaje]="nuevo"></app-agregar>
     </div>
     
 </div>
