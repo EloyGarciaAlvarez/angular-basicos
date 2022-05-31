@@ -21,7 +21,7 @@ import { Component, ComponentRef } from "@angular/core";
         <button (click)="modificarContador('dec');"> - {{base}} </button>
         <button (click)="incDecContador(-base);"> - {{base}} </button>
     `,
-    styles: ['color:blue']
+    styles: ['h2 {color:blue;}']
 })
 
 export class ContadorComponent{

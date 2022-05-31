@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { Personaje } from '../interfaces/dbz.interface';
+import { Component } from '@angular/core';
 import { DbzService } from '../services/dbz.service';
 
 @Component({
@@ -8,15 +7,9 @@ import { DbzService } from '../services/dbz.service';
 })
 export class PersonajesComponent {
 
-  // Los personajes vienen desde el componente padre, desde el html.
-  
-  //@Input() listaPersonajes:Personaje[]=[];
-  
   get personajes(){
     return this.dbzService.personajes;
   }
-  // Inyección de dependencia del servio DbzService al componente
-  // PersonajesComponent. El servicio es un singleton.
   constructor(private dbzService:DbzService){
 
   }
