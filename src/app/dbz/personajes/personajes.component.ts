@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-personajes',
@@ -11,5 +12,11 @@ export class PersonajesComponent {
   
   @Input() listaPersonajes:Personaje[]=[];
   
+
+  // Inyección de dependencia del servio DbzService al componente
+  // PersonajesComponent. El servicio es un singleton.
+  constructor(private dbzService:DbzService){
+
+  }
 
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
@@ -27,7 +28,13 @@ export class MainPageComponent{
     console.log("Agregando");
     if(this.personajes.some(pers => pers.nombre === nuevoPersonaje.nombre)){
       return
-    } 
+    }
     this.personajes.push(nuevoPersonaje);
+  }
+
+  // Esto es una inyección de dependencias.
+  // Estamos inyectando el servicio DbzServie al componente MainPageComponent.
+  constructor(private dbzService:DbzService){
+
   }
 }
